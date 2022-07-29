@@ -14,7 +14,7 @@
 	<name>spring-boot-full-stack</name>
 	<description>Demo spring-boot-full-stack project for Spring Boot</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>1.8</java.version>
 		<node.version>v16.15.0</node.version>
 		<npm.version>8.5.5</npm.version>
 	</properties>
@@ -90,6 +90,8 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
+
+
 				<executions>
 					<execution>
 						<id>Copy Vue frontend into Spring Boot target static folder</id>
@@ -108,21 +110,6 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>com.heroku.sdk</groupId>
-				<artifactId>heroku-maven-plugin</artifactId>
-				<version>3.0.3</version>
-				<configuration>
-					<appName>spring-boot-full-stack-vue</appName>
-					<processTypes>
-						<web>java -jar target/demo-0.0.1-SNAPSHOT.jar</web>
-					</processTypes>
-					<includeTarget>false</includeTarget>
-					<includes>
-						<include>target/demo-0.0.1-SNAPSHOT.jar</include>
-					</includes>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
